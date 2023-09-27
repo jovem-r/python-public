@@ -1,6 +1,9 @@
+import datetime
 from selenium import webdriver
 import time
 
+# 记录程序运行时间
+start = datetime.datetime.now()
 print("请选择序号来登陆账号："
       "\n序号0  用户A "
       "\n序号1  用户B "
@@ -94,6 +97,7 @@ driver.close()
 # 定位学习通网页
 driver.switch_to.window(all_handles[0])
 driver.implicitly_wait(10)
+# 登录单元
 driver.find_element_by_css_selector('body > div.Header > div > div.Loginbefore > a.loginbtn').click()
 driver.find_element_by_css_selector('#phone').send_keys(account)
 driver.find_element_by_css_selector('#pwd').send_keys(password)
@@ -102,6 +106,7 @@ driver.find_element_by_css_selector('#phoneLoginBtn').click()    # 点击登录
 # 进入刷课界面
 driver.get("http://i.mooc.chaoxing.com/settings/info")
 driver.find_element_by_css_selector('#zne_kc_icon > em').click()
+
 # 进入刷课单元
 driver.implicitly_wait(5)
 driver.get(dict.get('a'))
@@ -292,7 +297,9 @@ else:
 
 # 回收内存
 driver.quit()
+end = datetime.datetime.now()
 print('学习通自动化脚本已执行完毕')
-print(f"一共用时{wait_time}秒"
+print(f"程序运行时间:{end- start}"
       f"\n循环检测{attempts}次")
 print(time.strftime('%Y-%m-%d %H:%M:%S', time.localtime(time.time())))
+exit()
