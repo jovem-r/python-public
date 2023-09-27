@@ -1,5 +1,3 @@
-import sys
-import click
 from selenium import webdriver
 import time
 
@@ -104,9 +102,6 @@ driver.find_element_by_css_selector('#phoneLoginBtn').click()    # 点击登录
 # 进入刷课界面
 driver.get("http://i.mooc.chaoxing.com/settings/info")
 driver.find_element_by_css_selector('#zne_kc_icon > em').click()
-# 进入刷课单元
-driver.implicitly_wait(5)
-driver.get(dict.get('a'))
 # 进入刷课单元
 driver.implicitly_wait(5)
 driver.get(dict.get('a'))
