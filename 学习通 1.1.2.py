@@ -1,5 +1,4 @@
 import sys
-
 import click
 from selenium import webdriver
 import time
