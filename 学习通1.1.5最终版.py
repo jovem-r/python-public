@@ -90,7 +90,7 @@ print("请选择序号来登陆账号："
 IE = 5
 for i in range(1, 6):    # 五次输入错误机会
     accounts = input()
-# 登录信息储存单元
+
     if 0 == int(accounts):
         # 引用带插件的Firefox浏览器                       请自行修改自己的Firefox浏览器配置文件路径，否则会出现无法打开带插件的浏览器
         fp = webdriver.FirefoxProfile(r'C:\Users\ren\AppData\Roaming\Mozilla\Firefox\Profiles\ild3xohq.default-release-1695102566212')
