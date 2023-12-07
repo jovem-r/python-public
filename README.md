@@ -5,11 +5,8 @@ Firefox浏览器<br>
 Firefox驱动 <br>
 驱动使用说明：https://blog.csdn.net/qq_47959003/article/details/123584753<br>
 驱动下载：https://github.com/mozilla/geckodriver/releases/<br>
-第三方运行库安装<br>
-pip install webdriver<br>
-pip install time<br>
 打开Firefox浏览器安装<br>
 脚本猫拓展模块<br>
 模块为txt结尾的文件复制其中代码加入脚本猫即可
 最后打开python运行<br>
-记得补充课程网址和账号密码<br>
+记得补充账号密码<br>
