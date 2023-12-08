@@ -34,7 +34,6 @@ account = select_account(account_info)
 password = account_info[account]
 print('Welcome %s login the system!' % account)
 
-
 print("正在获取课程信息，请稍后。。。。。")
 # 获取课程网址
 # 设置Firefox浏览器选项
@@ -47,16 +46,13 @@ user_agents = [
     "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/117.0.0.0 Safari/537.36 Edg/117.0.2045.40",
     "Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.3"
 ]
-user_agent = random.choice(user_agents)
-profile = webdriver.FirefoxProfile()
-profile.set_preference("general.useragent.override", user_agent)
-driver = webdriver.Firefox(firefox_profile=profile, options=firefox_options)
 # 登录
 driver.get("https://passport2.chaoxing.com/login?fid=&newversion=true&refer=https://i.chaoxing.com")
 driver.find_element_by_css_selector('#phone').send_keys(account)
 driver.find_element_by_css_selector('#pwd').send_keys(password)
 driver.find_element_by_css_selector('#loginBtn').click()
 driver.implicitly_wait(10)
+time.sleep(3)
 # 切换到iframe
 driver.switch_to.frame(driver.find_element_by_css_selector("iframe[name=\"frame_content\"]"))
 # 获取课程链接和名称
@@ -98,8 +94,6 @@ for courses in range(1, 6):   # 五次输入错误机会
         if tags == 0:
             print("多次错误，请仔细核对序号输入！！！")
             exit()
-
-
 
 print("请选择序号来登陆账号："
       "\n序号0  正常浏览器 "
